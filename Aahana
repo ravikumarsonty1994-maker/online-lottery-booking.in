@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100d22">
+<title>Aahana Lottery Agency | Ticket Booking</title>
+<style>
+:root{--bg:#0c0a18;--panel:#171329;--panel2:#211b39;--gold:#f5c86b;--gold2:#ffe3a1;--muted:#aaa4bf;--white:#fff;--green:#45d49a;--red:#ff7184;--line:rgba(255,255,255,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#30214f 0,transparent 36%),var(--bg);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+button,input,select{font:inherit}.wrap{max-width:1180px;margin:auto;padding:0 22px}
+header{padding:20px 0;border-bottom:1px solid var(--line);background:rgba(12,10,24,.72);backdrop-filter:blur(16px);position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:.2px}.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#ffe5a2,#c58b2c);color:#25172a;display:grid;place-items:center;font-size:22px;box-shadow:0 7px 25px #e7b64b35}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;margin-top:3px}.nav a{color:var(--gold2);text-decoration:none;font-weight:700;font-size:13px}
+.hero{padding:62px 0 34px;display:grid;grid-template-columns:1.35fr .65fr;gap:25px;align-items:center}.eyebrow{color:var(--gold);font-weight:800;font-size:11px;letter-spacing:2.5px;text-transform:uppercase}.hero h1{font-size:clamp(38px,6vw,66px);line-height:1.02;letter-spacing:-2px;margin:14px 0}.hero h1 span{color:var(--gold)}.hero p{color:var(--muted);max-width:590px;line-height:1.7}.hero-card{border:1px solid #f5c86b3d;background:linear-gradient(145deg,#2b2146,#171329);padding:25px;border-radius:24px;box-shadow:0 20px 70px #0005}.hero-card .big{font-size:38px;font-weight:900;color:var(--gold);margin:8px 0}.hero-card p{font-size:13px;margin:0}
+.pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:23px}.pill{border:1px solid var(--line);border-radius:99px;padding:9px 13px;color:#e9e4f4;font-size:12px;background:#ffffff08}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:10px 0 28px}.stat{background:#ffffff08;border:1px solid var(--line);border-radius:16px;padding:17px}.stat b{font-size:24px;display:block}.stat span{color:var(--muted);font-size:11px}
+.section{background:linear-gradient(145deg,#19152c,#141124);border:1px solid var(--line);border-radius:23px;padding:24px;margin:18px 0 26px}.section-head{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:20px}.section h2{font-size:22px;margin:0 0 6px}.sub{color:var(--muted);font-size:13px;margin:0;line-height:1.5}
+.draws{display:flex;gap:10px}.draw{border:1px solid var(--line);border-radius:12px;padding:11px 17px;color:#ddd7ed;background:#ffffff08;cursor:pointer;font-weight:750}.draw.active{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#281b2b;border-color:transparent}
+.tools{display:flex;gap:10px;margin:18px 0;flex-wrap:wrap}.tools input{flex:1;min-width:190px}.field{width:100%;background:#0f0c1d;border:1px solid #ffffff1b;border-radius:11px;padding:13px 14px;color:white;outline:none}.field:focus{border-color:var(--gold)}.legend{display:flex;gap:15px;flex-wrap:wrap;color:var(--muted);font-size:11px;margin:14px 0}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}.available{background:#163e34;border:1px solid #2a8e6b;color:#7de3b8}.selected{background:linear-gradient(135deg,#ffe3a1,#e5ae48)!important;border:1px solid #ffe3a1!important;color:#2c1d25!important}.sold{background:#33202c;border:1px solid #754050;color:#b67b8b;cursor:not-allowed!important;opacity:.7}
+.grid{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:8px}.ticket{border-radius:9px;min-height:43px;cursor:pointer;font-size:12px;font-weight:800;transition:.15s}.ticket:not(.sold):hover{transform:translateY(-2px);filter:brightness(1.2)}.ticket:disabled{cursor:not-allowed}
+.booking{display:grid;grid-template-columns:1fr 1fr;gap:22px}.summary{background:#0f0c1d;border:1px solid var(--line);border-radius:16px;padding:18px}.summary h3{margin:0 0 12px}.chosen{min-height:48px;color:var(--muted);font-size:12px;line-height:1.7;overflow-wrap:anywhere}.total{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:13px;margin-top:14px}.total strong{font-size:22px;color:var(--gold)}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.formgrid label{display:block;color:#c9c3d8;font-size:11px;margin:0 0 7px}.full{grid-column:1/-1}.send{width:100%;border:0;border-radius:12px;padding:15px;background:linear-gradient(135deg,var(--gold2),#d99a32);color:#24182a;font-weight:900;cursor:pointer;margin-top:15px;box-shadow:0 9px 24px #e6b34a26}.send:hover{filter:brightness(1.06)}.note{font-size:11px;color:var(--muted);line-height:1.6;margin:12px 0 0}.footer{padding:25px 0 40px;text-align:center;color:var(--muted);font-size:11px}.wa{color:#72e0ad}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:42px}.hero-card{max-width:none}.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:repeat(5,minmax(0,1fr))}.booking{grid-template-columns:1fr}.section{padding:17px}.section-head{display:block}.draws{margin-top:15px}.nav a{font-size:11px}}
+@media(max-width:390px){.wrap{padding:0 13px}.grid{gap:6px}.ticket{font-size:10px;min-height:39px}.formgrid{grid-template-columns:1fr}.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><div class="brand"><div class="logo">✦</div><div>AAHANA LOTTERY AGENCY<small>YOUR NUMBER · YOUR CHOICE</small></div></div><a href="#booking">BOOK ON WHATSAPP ↗</a></div></header>
+<main class="wrap">
+<section class="hero"><div><div class="eyebrow">A smarter ticket booking experience</div><h1>Choose your number.<br><span>Make your pick.</span></h1><p>Explore the ticket collection, select available numbers and send your booking request directly to Aahana Lottery Agency on WhatsApp.</p><div class="pills"><span class="pill">✦ Easy number selection</span><span class="pill">◷ Two daily draws</span><span class="pill">✓ WhatsApp request</span></div></div><div class="hero-card"><div class="eyebrow">Ticket price</div><div class="big">₹250 <span style="font-size:14px;color:#d9c9a7">/ ticket</span></div><p>Pick one or more available ticket numbers and review your request before sending.</p></div></section>
+<div class="stats"><div class="stat"><b id="totalCount">250</b><span>TOTAL TICKETS</span></div><div class="stat"><b id="availableCount">175</b><span>AVAILABLE NOW</span></div><div class="stat"><b id="soldCount">75</b><span>SOLD OUT (30%)</span></div><div class="stat"><b id="selectedCount">0</b><span>YOUR SELECTION</span></div></div>
+<section class="section"><div class="section-head"><div><h2>Ticket collection</h2><p class="sub">Choose your draw and tap the ticket numbers you want.</p></div><div class="draws"><button class="draw active" data-draw="3:00 PM">3:00 PM DRAW</button><button class="draw" data-draw="7:00 PM">7:00 PM DRAW</button></div></div>
+<div class="tools"><input id="search" class="field" placeholder="Search ticket number (e.g. RU 666941)" aria-label="Search ticket number"><select id="filter" class="field" style="max-width:190px"><option value="all">All tickets</option><option value="available">Available only</option><option value="sold">Sold out only</option></select></div>
+<div class="legend"><span><i class="dot" style="background:#45d49a"></i>Available</span><span><i class="dot" style="background:#f5c86b"></i>Selected</span><span><i class="dot" style="background:#9a5269"></i>Sold out</span></div>
+<div class="grid" id="ticketGrid"></div></section>
+<section class="section" id="booking"><div class="section-head"><div><h2>Booking details</h2><p class="sub">Enter your details to prepare your WhatsApp booking request.</p></div></div>
+<div class="booking"><div class="summary"><h3>Your selection</h3><div class="sub" id="drawSummary">Draw: 3:00 PM</div><div class="sub" id="dateSummary" style="margin-top:6px">Date: —</div><div class="chosen" id="chosen">No tickets selected yet.</div><div class="total"><span>Total amount</span><strong id="amount">₹0</strong></div></div>
+<form id="bookingForm"><div class="formgrid"><div class="full"><label for="bookingDate">DRAW DATE *</label><input class="field" id="bookingDate" type="date" required></div><div class="full"><label for="name">FULL NAME *</label><input class="field" id="name" required maxlength="70" placeholder="Enter your name"></div><div><label for="mobile">MOBILE NUMBER *</label><input class="field" id="mobile" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit number"></div><div><label for="district">DISTRICT *</label><input class="field" id="district" required placeholder="Your district"></div><div class="full"><label for="state">STATE *</label><input class="field" id="state" required value="Tamil Nadu" placeholder="Your state"></div></div><button class="send" type="submit">SEND BOOKING REQUEST ON WHATSAPP ↗</button><p class="note">WhatsApp will open with your booking details. Review and send the message yourself. A request is not a confirmed booking until the agency confirms it. Ticket availability must be verified by the agency.</p></form></div></section>
+</main>
+<footer class="footer">© <span id="year"></span> Aahana Lottery Agency · Please check applicable local laws and official terms before participating.</footer>
+<script>
+const PRICE=250, TOTAL=250, WHATSAPP_NUMBER="919811274479";
+// 75 of 250 tickets (30%) are shown as sold out, distributed randomly across the list.
+// Demo/preset statuses only: replace with confirmed sales before publishing.
+// For live multi-customer inventory, connect this page to a secure database/backend.
+const SOLD_OUT = new Set([1, 4, 10, 12, 14, 23, 28, 30, 33, 35, 36, 41, 55, 56, 59, 62, 70, 76, 77, 79, 80, 81, 85, 89, 91, 94, 95, 97, 99, 103, 104, 107, 108, 109, 111, 114, 118, 120, 123, 127, 133, 134, 135, 141, 148, 150, 151, 157, 164, 169, 177, 183, 184, 185, 187, 188, 189, 195, 199, 201, 208, 212, 213, 216, 219, 220, 221, 223, 224, 230, 232, 237, 247, 248, 249]);
+const prefixes=["RU","RN","RO","RP","RR","RS","RT","RV","RW","RX","RY","RZ"];
+let draw="3:00 PM", selected=new Set();
+const dateInput=document.getElementById("bookingDate");
+const localToday=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;};
+const nextDay=()=>{const d=new Date();d.setDate(d.getDate()+1);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;};
+// Default each new booking to the next calendar day after the customer visits the page.
+dateInput.min=nextDay(); dateInput.value=nextDay();
+const prettyDate=value=>new Date(value+"T00:00:00").toLocaleDateString("en-IN",{day:"2-digit",month:"long",year:"numeric"});
+const grid=document.getElementById("ticketGrid"), search=document.getElementById("search"), filter=document.getElementById("filter");
+const money=n=>"₹"+n.toLocaleString("en-IN");
+function render(){
+ const q=search.value.trim().toLowerCase(), f=filter.value; grid.innerHTML="";
+ let avail=0;
+ for(let i=1;i<=TOTAL;i++){
+  const sold=SOLD_OUT.has(i); if(!sold)avail++;
+  const prefix=prefixes[(i-1)%prefixes.length];
+  const label=prefix+" "+String(666940+i).padStart(6,"0");
+  if(q && !label.toLowerCase().replace(/\s/g," ").includes(q.toLowerCase().trim()))continue;
+  if(f==="available"&&sold || f==="sold"&&!sold)continue;
+  const b=document.createElement("button"); b.className="ticket "+(sold?"sold":selected.has(i)?"selected":"available");
+  b.textContent=label; b.disabled=sold; b.type="button"; b.title=sold?"Sold out":"Ticket "+label;
+  b.setAttribute("aria-pressed",selected.has(i)?"true":"false");
+  b.addEventListener("click",()=>{selected.has(i)?selected.delete(i):selected.add(i);render();});
+  grid.appendChild(b);
+ }
+ document.getElementById("availableCount").textContent=avail;
+ document.getElementById("soldCount").textContent=SOLD_OUT.size;
+ document.getElementById("selectedCount").textContent=selected.size;
+ document.getElementById("chosen").textContent=selected.size?[...selected].sort((a,b)=>a-b).map(n=>prefixes[(n-1)%prefixes.length]+" "+String(666940+n).padStart(6,"0")).join(", "):"No tickets selected yet.";
+ document.getElementById("amount").textContent=money(selected.size*PRICE);
+ document.getElementById("drawSummary").textContent="Draw: "+draw+" · "+selected.size+" ticket(s)";
+ document.getElementById("dateSummary").textContent="Date: "+prettyDate(dateInput.value);
+}
+document.querySelectorAll(".draw").forEach(btn=>btn.addEventListener("click",()=>{draw=btn.dataset.draw;document.querySelectorAll(".draw").forEach(x=>x.classList.toggle("active",x===btn));render();}));
+search.addEventListener("input",render);filter.addEventListener("change",render);
+dateInput.addEventListener("change",render);
+document.getElementById("bookingForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ if(!selected.size){alert("Please select at least one available ticket.");return;}
+ if(!dateInput.value || dateInput.value < nextDay()){alert("Please choose tomorrow or a later draw date.");return;}
+ const bookingDate=prettyDate(dateInput.value);
+ const name=document.getElementById("name").value.trim(), mobile=document.getElementById("mobile").value.trim(), district=document.getElementById("district").value.trim(), state=document.getElementById("state").value.trim();
+ if(!/^[0-9]{10}$/.test(mobile)){alert("Please enter a valid 10-digit mobile number.");return;}
+ const nums=[...selected].sort((a,b)=>a-b).map(n=>prefixes[(n-1)%prefixes.length]+" "+String(666940+n).padStart(6,"0")).join(", ");
+ const msg=`Hello Aahana Lottery Agency,%0A%0AI would like to request a ticket booking.%0A%0AName: ${encodeURIComponent(name)}%0AMobile: ${encodeURIComponent(mobile)}%0ADistrict: ${encodeURIComponent(district)}%0AState: ${encodeURIComponent(state)}%0ADraw date: ${encodeURIComponent(bookingDate)}%0ADraw: ${encodeURIComponent(draw)}%0ATickets: ${encodeURIComponent(nums)}%0ANumber of tickets: ${selected.size}%0ATotal: ${encodeURIComponent(money(selected.size*PRICE))}%0A%0APlease confirm availability and booking details.`;
+ window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`,"_blank","noopener");
+});
+document.getElementById("year").textContent=new Date().getFullYear();render();
+</script>
+</body></html>
